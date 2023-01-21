@@ -1,6 +1,9 @@
 <template>
 
-<div class="butt">
+    <div class="clavier">
+
+        <input type="number">
+        <div class="butt">
             <button>
                 <span>1</span>
                 <span></span>
@@ -52,13 +55,28 @@
                 <img src="@/assets/phone.png" alt="">
             </div>
         </div>
+    </div>
         
 </template>
 
 
 <script>
 export default {
-  name: 'ClavierCard',
+    name: 'ClavierCard',
+
+    data() {
+        return {
+            number: '',
+            num: [
+                Array(10).keys()
+            ]
+        }
+    },
+    methods: {
+        pressButton() {
+            return 1
+        }
+    },
 }
 </script>
 

@@ -3,7 +3,7 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     number: 0,
-    contact: [
+    contacts: [
       {
         name: 'Gérard',
         num: 808080808,
@@ -15,18 +15,14 @@ export default createStore({
       {
         name: 'Estéban',
         num: 606060606,
-      }
+      },
     ],
-    formContact: []
   },
   getters: {
   },
   mutations: {
-    addContact(state, user) {
-      state.contact.push(user)
-    },
-    increment(state) {
-      state.compteur++
+    addContact(state, contact) {
+      state.contacts.push(contact)
     },
   },
   actions: {
