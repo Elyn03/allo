@@ -1,6 +1,6 @@
 <template>
 
-    <div class="contact">
+    <div class="page contact">
 
         <div class="cartes">
             <div v-for="user in contacts" :key="user.name">
@@ -41,7 +41,6 @@ import FormContact from "@/components/FormContact.vue";
 
 <style scoped>
     .contact {
-        margin-left: 250px;
         display: flex;
         flex-direction: column;
         justify-content: center;

@@ -21,8 +21,8 @@
   nav {
     display: flex;
     flex-direction: column;
-    height: 100%; /* 100% Full-height */
-    width: 200px; /* 0 width - change this with JavaScript */
+    height: 100%;
+    width: 200px;
     position: fixed;
     top: 0;
     left: 0;
@@ -45,6 +45,9 @@
     background-color: #ffffff;
     color: #bc7d2c;
     transition: 0.5s;
+  }
 
+  .page {
+    margin: auto;
   }
 </style>

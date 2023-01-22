@@ -1,6 +1,6 @@
 <template>
 
-    <div class="journal">
+    <div class="page journal">
         <div v-for="user in journal" :key="user.name" class="appel">
             <div class="block">
                 <h2>{{ user.name }}</h2>
@@ -37,7 +37,6 @@
 
 <style scoped>
     .journal {
-        margin-left: 250px;
         justify-content: center;
         align-items: center;
     }

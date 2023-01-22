@@ -1,5 +1,5 @@
 <template>
-    <div class="tel">
+    <div class="page tel">
 
         <ClavierCard />
 
@@ -30,8 +30,4 @@ import ClavierCard from '@/components/ClavierCard.vue';
 </script>
 
 <style scoped>
-    .tel{
-        margin-left: 300px;
-    }
-
 </style>

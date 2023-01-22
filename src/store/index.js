@@ -4,8 +4,8 @@ export default createStore({
   state: {
     contacts: [
       {
-        name: 'Gérard',
-        num: 808080808,
+        name: 'Cel',
+        num: 769362969,
       },
       {
         name: 'Sylvie',
@@ -27,12 +27,22 @@ export default createStore({
 
     call(state, user) {
       var today = new Date();
-      let inJournal= {
-        name: user.name,
-        date: today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear(),
-        time: today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(),
-      };
-      state.journal.push(inJournal)
+      if (user.name) {
+        let inJournal= {
+          name: user.name,
+          date: today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear(),
+          time: today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(),
+        };
+        state.journal.push(inJournal)
+      } else {
+        let inJournal= {
+          name: user,
+          date: today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear(),
+          time: today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(),
+        };
+        state.journal.push(inJournal)
+      }
+      
     },
   },
   actions: {
