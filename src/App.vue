@@ -50,4 +50,22 @@
   .page {
     margin: auto;
   }
+  
+  @media only screen and (max-width: 720px) {
+    nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      height: 60px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      background-color: #ffab40;
+      transition: 0.5s;
+      border-right: 3px solid #bc7d2c;
+    }
+    .page {
+      margin-top: 100px;
+    }
+  }
 </style>
