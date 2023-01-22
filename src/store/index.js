@@ -26,7 +26,13 @@ export default createStore({
       state.contacts.push(contact)
     },
     call(state, user) {
-      state.journal.push(user)
+      var today = new Date();
+      let inJournal= {
+        name: user.name,
+        date: today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear(),
+        time: today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(),
+      };
+      state.journal.push(inJournal)
     },
   },
   actions: {

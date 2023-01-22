@@ -4,7 +4,7 @@
         <div v-for="user in journal" :key="user.name" class="appel">
             <div class="block">
                 <h2>{{ user.name }}</h2>
-                <span>{{ user.num }}</span>
+                <span>le {{ user.date }} à {{ user.time }}</span>
             </div>
             <button class="call" @click="call(user)">
                 <img src="@/assets/phone.png" alt="" />

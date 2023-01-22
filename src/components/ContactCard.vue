@@ -4,7 +4,7 @@
         <div class="user">
             <div class="block">
                 <h2>{{ user.name }}</h2>
-                <span>{{ user.num }}</span>
+                <span>0{{ user.num }}</span>
             </div>
             <button class="call" @click="call(user)">
                 <img src="@/assets/phone.png" alt="" />
