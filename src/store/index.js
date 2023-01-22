@@ -17,12 +17,16 @@ export default createStore({
         num: 606060606,
       },
     ],
+    journal: []
   },
   getters: {
   },
   mutations: {
     addContact(state, contact) {
       state.contacts.push(contact)
+    },
+    call(state, user) {
+      state.journal.push(user)
     },
   },
   actions: {

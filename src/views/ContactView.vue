@@ -31,6 +31,9 @@ import FormContact from "@/components/FormContact.vue";
         computed: {
             contacts() {
                 return this.$store.state.contacts
+            },
+            journal() {
+                return this.$store.state.journal
             }
         },
     }

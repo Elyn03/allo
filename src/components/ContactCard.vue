@@ -6,7 +6,10 @@
                 <h2>{{ user.name }}</h2>
                 <span>{{ user.num }}</span>
             </div>
-            <img src="@/assets/phone.png" alt="">
+            <button class="call" @click="call(user)">
+                <img src="@/assets/phone.png" alt="" />
+            </button>
+            
         </div>
     </div>
         
@@ -19,7 +22,22 @@
 
         props: [
             'user'
-        ]
+        ],
+
+        computed: {
+			contacts() {
+				return this.$store.state.contacts
+			},
+            journal() {
+				return this.$store.state.journal
+			}
+		},
+
+        methods: {
+			call(user) {
+				this.$store.commit('call', user)
+			}
+		}
 
     }
 </script>
@@ -57,6 +75,11 @@
         align-self: center;
         justify-self: start;
         color: rgb(116, 116, 116);
+    }
+    .call {
+        background: none;
+        border: none;
+        cursor: pointer;
     }
 
 </style>
