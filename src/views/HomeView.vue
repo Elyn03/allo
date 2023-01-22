@@ -1,8 +1,6 @@
 <template>
     <div class="tel">
 
-        <h2>kk</h2>
-
         <ClavierCard />
 
     </div>

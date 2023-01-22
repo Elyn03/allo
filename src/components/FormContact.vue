@@ -93,6 +93,7 @@ import ContactCard from './ContactCard.vue'
         background-color: #ffab40;
         border: 3px solid #bc7d2c;
         cursor: pointer;
+        border-radius: 3px;
     }
 
 </style>

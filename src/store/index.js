@@ -2,7 +2,6 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    number: 0,
     contacts: [
       {
         name: 'Gérard',
@@ -17,7 +16,7 @@ export default createStore({
         num: 606060606,
       },
     ],
-    journal: []
+    journal: [],
   },
   getters: {
   },
@@ -25,6 +24,7 @@ export default createStore({
     addContact(state, contact) {
       state.contacts.push(contact)
     },
+
     call(state, user) {
       var today = new Date();
       let inJournal= {

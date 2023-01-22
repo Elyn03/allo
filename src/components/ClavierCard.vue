@@ -2,59 +2,20 @@
 
     <div class="clavier">
 
-        <input type="number">
-        <div class="butt">
-            <button>
-                <span>1</span>
-                <span></span>
-            </button>
-            <button>
-                <span>2</span>
-                <span>abc</span>
-            </button>
-            <button>
-                <span>3</span>
-                <span>def</span>
-            </button>
-            <button>
-                <span>4</span>
-                <span>ghi</span>
-            </button>
-            <button>
-                <span>5</span>
-                <span>jkl</span>
-            </button>
-            <button>
-                <span>6</span>
-                <span>mno</span>
-            </button>
-            <button>
-                <span>7</span>
-                <span>pqrs</span>
-            </button>
-            <button>
-                <span>8</span>
-                <span>tuv</span>
-            </button>
-            <button>
-                <span>9</span>
-                <span>xyz</span>
-            </button>
-            <button>
-                <span>*</span>
-            </button>
-            <button>
-                <span>0</span>
-                <span>abc</span>
-            </button>
-            <button>
-                <span>#</span>
+        <div class="input">
+            <h1 class="list" type="number"> {{ value }}</h1>
+        </div>
+
+        <div class="keyboard">
+            <button v-for="i in num" :key="i" @click="press(i)">
+                {{ i }}
             </button>
 
-            <div class="phone">
-                <img src="@/assets/phone.png" alt="">
+            <div class="phone" @click="call(value)">
+                <img src="@/assets/phone.png" alt="" />
             </div>
         </div>
+
     </div>
         
 </template>
@@ -64,17 +25,25 @@
 export default {
     name: 'ClavierCard',
 
+    computed: {
+        numero() {
+            return this.$store.state.numero
+        },
+    },
+
     data() {
         return {
-            number: '',
-            num: [
-                Array(10).keys()
-            ]
+            value: '',
+            num: [1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'],
         }
     },
+    
     methods: {
-        pressButton() {
-            return 1
+        press(key) {
+            this.value = `${this.value}${key}`;
+        },
+        call(user) {
+            this.$store.commit('call', user)
         }
     },
 }
@@ -82,7 +51,13 @@ export default {
 
 
 <style scoped>
-    .butt {
+    .clavier {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .butt, .keyboard {
         justify-content: center;
         display: grid;
         grid-template-columns: repeat(3, 50px) ;
@@ -111,6 +86,7 @@ export default {
         height: 50px;
         justify-self: center;
         align-self: center;
+        cursor: pointer;
     }
 
 </style>
