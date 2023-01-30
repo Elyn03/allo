@@ -4,10 +4,6 @@ export default createStore({
   state: {
     contacts: [
       {
-        name: 'Cel',
-        num: 769362969,
-      },
-      {
         name: 'Sylvie',
         num: 707070707,
       },
